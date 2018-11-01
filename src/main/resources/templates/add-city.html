@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>ADD A CITY</title>
+</head>
+<body>
+		<form action="/states" method="post">
+		<!--
+			Input names need to correspond to what you're 
+			calling them in the controller
+		 -->
+			<label>Add Name: <input type="text" name="cityName" /></label>
+			<label for="content">Add State:</label>
+			<textarea name="content" placeholder="Add State"></textarea>
+			<textarea name="content" placeholder="Add Population"></textarea>
+			<input type="submit" value="Submit" />
+		</form>
+</body>
+</html>

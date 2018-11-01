@@ -5,20 +5,19 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Fish {
 
-	private String name;
+	private String fishName;
 	private String binomialNomenclature;
 	private String imageURL;
 	public Fish() {
 		
 	}
-	public Fish(String name, String binomialNomenclature, String imageURL) {
-		super();
-		this.name = name;
+	public Fish(String fishName, String binomialNomenclature, String imageURL) {
+		this.fishName = fishName;
 		this.binomialNomenclature = binomialNomenclature;
 		this.imageURL = imageURL;
 	}
 	public String getName() {
-		return name;
+		return fishName;
 	}
 	public String getBinomialNomenclature() {
 		return binomialNomenclature;

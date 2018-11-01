@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CitiesandstatesRestController {
+public class CitiesandstatesAPIController {
 
 	@Autowired
 	StateRepository stateRepo;
@@ -15,11 +15,10 @@ public class CitiesandstatesRestController {
 	public Iterable<State> getStates() {
 		return stateRepo.findAll();
 	}
-	
-	@GetMapping("/api/states/{id}")
-	public State getState(@PathVariable(value = "id") Long id) {
-		return stateRepo.findById(id).get();
-	}	
-	
-	
+ 
+	@GetMapping("/api/states/{abbr}")
+	public State getStates(@PathVariable(value = "abbr") String abbr) {
+		return stateRepo.findByAbbreviationIgnoreCase(abbr);
+	}
+
 }

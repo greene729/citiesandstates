@@ -14,6 +14,11 @@ public class State {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private String stateName;
+	public String getStateName() {
+		return stateName;
+	}
+
 	private String abbreviation;
 	private String motto;
 	@Embedded
@@ -25,7 +30,8 @@ public class State {
 	public State() {
 	}
 
-	public State(String abbreviation, String motto, Fish fish, String citiesURL) {
+	public State(String name, String abbreviation, String motto, Fish fish, String citiesURL) {
+		this.stateName = name;
 		this.abbreviation = abbreviation;
 		this.motto = motto;
 		this.fish = fish;

@@ -9,13 +9,18 @@ import org.springframework.stereotype.Service;
 public class CitiesandstatesPopulator implements CommandLineRunner {
 
 	@Resource
-	CityRepository cityRepository;
+	CityRepository cityRepo;
 
 	@Resource
-	StateRepository stateRepository;
+	StateRepository stateRepo;
 
 	@Override
 	public void run(String... args) throws Exception {
+		Fish walleye = new Fish("Walleye","Stizsostedion vitreum","./images/walleye.jpeg");
+		State ohio = new State("Ohio","OH","With God All things are possible", walleye,"/states/oh/cities");
+		ohio = stateRepo.save(ohio);
+		City columbus = new City("Columbus",879170L,ohio);
+		columbus = cityRepo.save(columbus);
 
 	}
 
